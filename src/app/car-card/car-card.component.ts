@@ -1,3 +1,4 @@
+import { CommonModule } from '@angular/common';
 import { Component, Input } from '@angular/core';
 
 interface Car {
@@ -26,32 +27,10 @@ interface Car {
 
 @Component({
   selector: 'app-car-card',
-  imports: [],
+  imports: [CommonModule],
   templateUrl: './car-card.component.html',
   styleUrl: './car-card.component.css'
 })
 export class CarCardComponent {
-  @Input() car: Car = {
-    id: 0,
-    brand: 'Brand',
-    model: 'Model',
-    year: 2023,
-    imageUrl1: 'assets/car-image.jpg',
-    imageUrl2: '',
-    imageUrl3: '',
-    image1: '',
-    image2: '',
-    image3: '',
-    price: 100,
-    multiplier: 1,
-    capacity: 5,
-    transmission: 'Automatic',
-    createdBy: '',
-    createdByEmail: '',
-    fuelCapacity: 50,
-    city: 'City',
-    latitude: 0,
-    longitude: 0,
-    ownerPhoneNumber: ''
-  };
+  @Input() car!: Car;
 }
